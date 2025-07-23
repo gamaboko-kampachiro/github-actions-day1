@@ -1,0 +1,24 @@
+name: Workflow anatomy Demo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    env:
+      GREETING: "yokoso watsino soul society"
+
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Print GREETING
+        run: echo "$GREETING"
+
+      - name: show directory info
+        run: |
+            pwd
+            ls -la
